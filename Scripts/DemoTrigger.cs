@@ -20,5 +20,9 @@ public static class DemoTrigger{
         listOfArticles.Add(article);
     }
 
+    public static void ResetList(){
+        listOfArticles = new List<DemoArticle>();
+    }
+
 
 }
