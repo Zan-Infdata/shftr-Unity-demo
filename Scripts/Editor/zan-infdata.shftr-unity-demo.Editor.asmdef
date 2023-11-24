@@ -1,0 +1,16 @@
+{
+    "name": "zan-infdata.shftr-unity-demo.Editor",
+    "rootNamespace": "",
+    "references": [
+        "GUID:1a9bad6527fe9de4bb4b91c512564bbd"
+    ],
+    "includePlatforms": [],
+    "excludePlatforms": [],
+    "allowUnsafeCode": false,
+    "overrideReferences": false,
+    "precompiledReferences": [],
+    "autoReferenced": true,
+    "defineConstraints": [],
+    "versionDefines": [],
+    "noEngineReferences": false
+}
