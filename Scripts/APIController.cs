@@ -77,7 +77,11 @@ public static class APIController{
         } 
     }
 
-    public static async SysTask.Task<bool> DownoadModel(string file){
+
+    public static async SysTask.Task<byte[]> DownoadModel(string file){
+
+
+        byte[] byteArray = new byte[0];
 
         string testURL = API_URL+API_MOD_DOWN;
         string urlParameters = API_MOD_DOWN_PARAM+file;
@@ -91,20 +95,17 @@ public static class APIController{
 
         if (response.IsSuccessStatusCode) {
 
-            var byteArray = await response.Content.ReadAsByteArrayAsync();
+            byteArray = await response.Content.ReadAsByteArrayAsync();
 
-
-            FileManager.SaveModel(file, byteArray);
-
-            return true;
+            return byteArray;
 
         } else {
             //TODO: handle error
-            return false;
+            return byteArray;
         }
     }
 
-        public static async SysTask.Task<JObject> GetCurrModelName(string aid){
+    public static async SysTask.Task<JObject> GetCurrModelName(string aid){
 
         string testURL = API_URL+API_CURR_ART_MOD;
         string urlParameters = API_CURR_ART_MOD_PARAM+aid;

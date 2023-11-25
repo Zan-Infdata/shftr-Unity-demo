@@ -13,15 +13,16 @@ public class ModelControllerAsync{
         this.defModel = dm;
     }
 
-    public void ImportModelAsync(string fp) {
-        Importer.LoadFromFileAsync(fp, new ImportSettings(), OnFinishAsync);
-    }
-
     private void OnFinishAsync(GameObject result, AnimationClip[] animations) {
 
         result.transform.SetParent(parent, false);
         //hide default model
         this.defModel.gameObject.SetActive(false);
+    }
+
+
+    public void ImportModelAsync(byte[] byteStream) {
+        Importer.ImportGLBAsync(byteStream, new ImportSettings(), OnFinishAsync);
     }
 
 
